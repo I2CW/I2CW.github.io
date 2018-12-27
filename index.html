@@ -5,14 +5,23 @@
 <title>Introduction to College Writing Timeline</title>
 <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
-<script src="https://raw.githubusercontent.com/kogmbh/ViewerJS/master/ODFViewerPlugin.js"></script>
+<script src="js/webodf.js"></script>
 
 
 <script type="text/javascript">
+function popUpApp(x) {
+	switch(x){
+		case 'syllabus':
+		$("#popUp").html('Syllabus<iframe height="90%" width="100%" src="syllabus/syllabus.html" allowfullscreen webkitallowfullscreen></iframe><span id="closeButton"> <a class="myButton" href="#" onClick="$(this).parent().parent().hide(300)">✖</a></span>').show(300);
+		break;
+		case 'writingbook':
+		$("#popUp").html('Writing Book for Beginners<iframe height="90%" width="100%" src="/ViewerJS/#../docs/book4beginners.odt"></iframe><span id="closeButton"> <a class="myButton" href="#" onClick="$(this).parent().parent().hide(300)">✖</a></span>').show(300);
+		break;
+		default: 
+	}
+
+}
 $(document).ready(function() {
-		function popUp() {
-			$("#popUp").show(100); 
-		}
 		let idPick = "#0";
 		let textSwal = "";
 		for (i = 1; i < 118; i++) { 
@@ -409,7 +418,8 @@ header {
 			<a href="#" class="myButton" id="ShowAllDocs" onClick="$(this).parent().next().slideDown(300)">more</a>
 		</span>
 		<div id="linkButtons"> 
-			<a class="myButton" href="#" onClick="$('#popUp').show(300);">Syllabus</a>
+			<a class="myButton" href="#" onClick="popUpApp('syllabus');">Syllabus</a>
+			<a class="myButton" href="#" onClick="popUpApp('writingbook');">Writing Book for Beginners</a>
 			<a href="#" onClick="$(this).parent().slideUp(300);" class="myButton" id="close">✖</a>
 </div>
 </header>
@@ -421,7 +431,8 @@ header {
  </div>
 
  <div id="backToTop"><a href="#bodyContainer">^</a></div> 
- <div id="popUp">Syllabus<iframe height="90%" width="100%" src="syllabus/syllabus.html"></iframe><span id="closeButton"> <a class="myButton" href="#" onClick="$(this).parent().parent().hide(300)">✖</a></span></div>
+ <div id="popUp"></div>
+ 
 
  
 </body>
