@@ -9,10 +9,10 @@
 
 
 <script type="text/javascript">
-
-
- 
 $(document).ready(function() {
+		function popUp() {
+			$("#popUp").show(100); 
+		}
 		let idPick = "#0";
 		let textSwal = "";
 		for (i = 1; i < 118; i++) { 
@@ -27,7 +27,7 @@ $(document).ready(function() {
 					case 2:
 					case 3:
 					case 4:
-					$("#content").append("<div class='day' id='day" + i + "'>" + i + " <br><strong>" + newDateFormat + "</strong></div><div data='" + newDateFormat  + "' id='info" + i + "' class='inform'>Welcome to <br />Introduction to College Writing<br><br><a class='myButton' href='/syllabus/syllabus.html' target='_blank'>Click to read syllabus</a>");
+					$("#content").append("<div class='day' id='day" + i + "'>" + i + " <br><strong>" + newDateFormat + "</strong></div><div data='" + newDateFormat  + "' id='info" + i + "' class='inform'>Welcome to <br />Introduction to College Writing<br><br><a class='myButton' onClick='$(\"#popUp\").show(500); '>Click to read syllabus</a>");
 					break;
 					case 57:
 					$("#content").append("<div class='day' id='day" + i + "'>" + i + " <br><strong>" + newDateFormat + "<br>Mid-term</strong></div><div data='" + newDateFormat  + "' id='info" + i + "' class='inform'>Welcome to <br />Introduction to College Writing<br><br><button class='button' onClick='swal(\"Hello world! 57\");' id='syllabusLink'>Click to Read the Syllabus</button>");
@@ -52,10 +52,12 @@ $(document).ready(function() {
 					$("#content").append("<div class='day' id='day" + i + "'>" + i + " <br><strong>" + newDateFormat + "</strong></div><div data='" + newDateFormat  + "' id='info" + i + "' class='inform'></div>");
 					};
 				
-					
+			$("#popUp").hide(); 		
 					
 				
 		}
+		
+
 
 		$(".day").hover(function() {
 				console.log(idPick);
@@ -184,6 +186,7 @@ $(document).ready(function() {
 		})
 
 		$(".inform").hide();
+		$("#linkButtons").hide(); 
 })
 	
  
@@ -286,6 +289,25 @@ header {
 		color:blue;
 		}
 
+		#popUp {
+		width: 75vw;
+		height: 75vh;
+		font-family: "Special Elite";
+		font-size: 38px;
+		position:fixed;
+		top: 10%;
+		left: 50%;
+		background-color: white;
+		color: black;
+		border: solid, thick, yellow; 
+		transform: translateX(-50%);
+		border-style: solid;
+  		border-width: 5px;
+		border-color: black;
+		padding: 10px 10px 10px 10px;
+		text-align: center; 
+		}
+
    .inform {
 	color: yellow; 
 	height: 300px;
@@ -349,6 +371,11 @@ header {
 	animation-duration: 3s;
 }
 
+#closeButton {
+	position:fixed;
+	top: 5px;
+	right: 5px;
+}
 
 
 @keyframes moveInTop {
@@ -360,6 +387,8 @@ header {
 		opacity: 1;
 		transform: translate(0);
 	}
+
+
 }
 
 	
@@ -370,14 +399,19 @@ header {
 		<h1>
 			<span class="title">Introduction to College Writing Timeline</span>
 		</h1>
-		<span>
+		<span id="dateButtons">
 			<a href="#" id="mon9" class="myButton">Mon 9 to Noon</a>
 			<a href="#" class="myButton" id="monWed1">Mon and Wed 1 - 2:30pm</a>
 			<a href="#" class="myButton" id="tuesNight">Tue Night</a>
 			<a href="#" class="myButton" id="wed9">Wed 9 to Noon</a>
 			<a href="#" class="myButton" id="thuNight">Thu Night</a>
 			<a href="#" class="myButton" id="showAll">Show all dates</a>
+			<a href="#" class="myButton" id="ShowAllDocs" onClick="$(this).parent().next().slideDown(300)">more</a>
 		</span>
+		<div id="linkButtons"> 
+			<a class="myButton" href="#" onClick="$('#popUp').show(300);">Syllabus</a>
+			<a href="#" onClick="$(this).parent().slideUp(300);" class="myButton" id="close">✖</a>
+</div>
 </header>
 <div id="container">
  <div id="content">
@@ -385,6 +419,8 @@ header {
  
 </div>
  </div>
- <div id="backToTop"><a href="#bodyContainer">^</a></div>
+
+ <div id="backToTop"><a href="#bodyContainer">^</a></div> 
+ <div id="popUp">Syllabus<iframe height="90%" width="100%" src="I2CWSyllabus.html"></iframe><span id="closeButton"> <a class="myButton" href="#" onClick="$(this).parent().parent().hide(300)">✖</a></span></div>
 </body>
 </html>
