@@ -53,7 +53,6 @@ h1 {
 }
 
 header {
-	font-size:3rem;
 	color: yellow; 
 	text-align: center; 
 	margin: .4em 0px .7em 0px; 
@@ -76,6 +75,7 @@ header {
 		color: yellow;
 		border: .5rem, solid, black !important ; 
 		border-radius: .3rem; 
+		margin: .5rem; 
 	}
 		
  
@@ -125,6 +125,8 @@ header {
 	text-align: center; 
 	padding: 1rem 1rem 1rem 1rem; 
 	text-shadow: .2rem .2rem #666666;
+	line-height: 3rem;
+	margin: 1rem;  
 	
 
    }
@@ -146,7 +148,7 @@ header {
 	-moz-border-radius: .6rem;
 	-webkit-border-radius:.6rem;
 	border-radius:.6rem;
-	border:1px solid #ffaa22;
+	
 	display:inline-block;
 	cursor:pointer;
 	color:#333333;
