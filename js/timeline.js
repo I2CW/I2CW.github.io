@@ -26,7 +26,7 @@ $(document).ready(function() {
 					case 2:
 					case 3:
 					case 4:
-					$("#content").append("<div class='day' id='day" + i + "'>" + i + " <br><strong>" + newDateFormat + "</strong></div><div data='" + newDateFormat  + "' id='info" + i + "' class='inform'>Welcome to <br />Introduction to College Writing<br><br><div><a class='myButton' onClick=\"popUpApp('syllabus');\">Click to read syllabus</a><a class='myButton' href='https://blackhawk.blackboard.com/webapps/assessment/take/launchAssessment.jsp?course_id=_56259_1&content_id=_1212455_1&mode=cpview'>Precourse Assessment</a><a class='myButton' href='https://blackhawk.blackboard.com/webapps/assessment/take/launchAssessment.jsp?course_id=_56259_1&content_id=_1220870_1&mode=cpview'>Student Survey</a></div><br><p>All assignments or assessments listed are due by the end of class.</p>");
+					$("#content").append("<div class='day' id='day" + i + "'>" + i + " <br><strong>" + newDateFormat + "</strong></div><div data='" + newDateFormat  + "' id='info" + i + "' class='inform'>Welcome to <br />Introduction to College Writing<br><br><span><a class='myButton' onClick=\"popUpApp('syllabus');\">Click to read syllabus</a><a class='myButton' href='https://blackhawk.blackboard.com/webapps/assessment/take/launchAssessment.jsp?course_id=_56259_1&content_id=_1212455_1&mode=cpview'>Precourse Assessment</a><a class='myButton' href='https://blackhawk.blackboard.com/webapps/assessment/take/launchAssessment.jsp?course_id=_56259_1&content_id=_1220870_1&mode=cpview'>Student Survey</a></span><br><p>All assignments or assessments listed are due by the end of class.</p>");
 					break;
 					case 57:
 					$("#content").append("<div class='day' id='day" + i + "'>" + i + " <br><strong>" + newDateFormat + "<br>Mid-term</strong></div><div data='" + newDateFormat  + "' id='info" + i + "' class='inform'>Welcome to <br />Introduction to College Writing<br><br><button class='button' onClick='swal(\"Hello world! 57\");' id='syllabusLink'>Click to Read the Syllabus</button>");
@@ -79,38 +79,48 @@ $(document).ready(function() {
 				
 			});
 
-		$(".day").click(function() {	
-			$(idPick).css("background-color", "yellow");
-			$(idPick).css("color", "black");	
-			idPick = '#' + this.id;	
-			console.log("clicked " + idPick)
-			let dayPick = $(this).html().split(" ");
-			$('.inform').slideUp(500);
-			$(this).next('.inform').slideDown(500);
-			$( this ).css( "background-color", "red" );
-			//$( ".day" ).css( "background-color", "yellow" );
-			//alert($(this).attr("id"));
+		$(".day").click(function() {
+            console.log($(this).next(".inform").is(":hidden"));
+            if ($(this).next(".inform").is(":hidden") == true){
+                $(idPick).css("background-color", "yellow");
+                $(idPick).css("color", "black");	
+                idPick = '#' + this.id;	
+                console.log("clicked " + idPick)
+                let dayPick = $(this).html().split(" ");
+                $('.inform').slideUp(500);
+                $(this).next('.inform').slideDown(500);
+                $( this ).css( "background-color", "red" );
+                //$( ".day" ).css( "background-color", "yellow" );
+                //alert($(this).attr("id"));
+                
+                switch (dayPick[0]) { 
+                    case '112': 
+                    alert(dayPick[0]);	
+                    $("#info").html( "Welcome to <br />Introduction to College Writing<br><br><button class='button' onClick=\"swal({\"  title: '<strong>HTML <u>example</u></strong>', type:'info',  html:'You can use <b>bold text</b><a href=\"//github.com\">links</a> and other HTML tags' showCloseButton: true,   showCancelButton: true,  focusConfirm: false,  confirmButtonText:'<i class=\"fa fa-thumbs-up\"></i> Great!', confirmButtonAriaLabel: 'Thumbs up, great!', cancelButtonText: '<i class=\"fa fa-thumbs-down\"></i>', cancelButtonAriaLabel: 'Thumbs down', })\");\" id='syllabusLink'>Click to Read the Syllabus</button>");
+                    break;
+                    case '113':
+                    $(this).next('.inform').html("<h1>Final Exam Week</h1>");
+                    break;
+                    case '114':
+                    $(this).next('.inform').html("<h1>Final Exam Week</h1>");
+                    break;
+                    case '115':
+                    $(this).next('.inform').html("<h1>Final Exam Week</h1>");
+                    break;
+                    case '116':
+                    $(this).next('.inform').html("<h1>Final Exam Week<br>Thursday Night 6:00 to 9:00 pm</h1>");
+                    break;
+                    default:
+                    $("#info").html(textSwal);
+                    };
+                
+                //
+            } else {
+                $(this).next('.inform').slideUp(500);
+            }
+                
+
 			
-			switch (dayPick[0]) { 
-				case '112': 
-				alert(dayPick[0]);	
-				$("#info").html( "Welcome to <br />Introduction to College Writing<br><br><button class='button' onClick=\"swal({\"  title: '<strong>HTML <u>example</u></strong>', type:'info',  html:'You can use <b>bold text</b><a href=\"//github.com\">links</a> and other HTML tags' showCloseButton: true,   showCancelButton: true,  focusConfirm: false,  confirmButtonText:'<i class=\"fa fa-thumbs-up\"></i> Great!', confirmButtonAriaLabel: 'Thumbs up, great!', cancelButtonText: '<i class=\"fa fa-thumbs-down\"></i>', cancelButtonAriaLabel: 'Thumbs down', })\");\" id='syllabusLink'>Click to Read the Syllabus</button>");
-				break;
-				case '113':
-				$(this).next('.inform').html("<h1>Final Exam Week</h1>");
-				break;
-				case '114':
-				$(this).next('.inform').html("<h1>Final Exam Week</h1>");
-				break;
-				case '115':
-				$(this).next('.inform').html("<h1>Final Exam Week</h1>");
-				break;
-				case '116':
-				$(this).next('.inform').html("<h1>Final Exam Week<br>Thursday Night 6:00 to 9:00 pm</h1>");
-				break;
-				default:
-				$("#info").html(textSwal);
-				};
 		});
 
 		$("#mon9").click(function() {
