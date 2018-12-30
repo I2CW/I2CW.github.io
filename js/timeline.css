@@ -1,11 +1,14 @@
 html {
-    font-size:62.5%;
+	font-size:62.5%;
 }
 
 
 
  #bodyContainer {
- 	background-image:url(../chalkboardCloseup.jpeg);
+	 background-image:url(../chalkboardCloseup.jpeg);
+	background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: soft-light;
+	 
 	 background-size: 100% 100%;
 	 font-family: "Special Elite", serif, georgia; 
 	 padding: .5rem  2rem 2rem  2rem ; 
@@ -124,11 +127,7 @@ header {
 	font-size: 2.5rem;
 	text-align: center; 
 	padding: 1rem 1rem 1rem 1rem; 
-	text-shadow: .2rem .2rem #666666;
-	line-height: 3rem;
 	margin: 1rem;  
-	
-
    }
 
    
