@@ -201,7 +201,6 @@ $( function() {
         $( '#header a' ).stop().animate({
             color: game.color
         }, 1000);
-		console.log('here');
         // Update the picture
         
 		
