@@ -2,7 +2,7 @@
 function popUpApp(x) {
     switch(x){
 		case 'syllabus':
-		$("#popUp").html('Syllabus<iframe height="90%" width="100%" src="syllabus/syllabus.html" allowfullscreen webkitallowfullscreen></iframe><span id="closeButton"> <a class="myButton" href="#" onClick="$(this).parent().parent().hide(300)">✖</a></span>').show(300);
+		$("#popUp").html('Syllabus<iframe height="90%" width="100%" src="https://docs.google.com/document/d/1JLMGXWO8VVucekg9G36xGMwf_kmINzDtwSgaFCgzOn0/edit?usp=sharing" allowfullscreen webkitallowfullscreen></iframe><span id="closeButton"> <a class="myButton" href="#" onClick="$(this).parent().parent().hide(300)">✖</a></span>').show(300);
 		break;
 		case 'writingbook':
 		$("#popUp").html('Writing Book for Beginners<iframe height="90%" width="100%" src="/ViewerJS/#../docs/book4beginners.odt"></iframe><span id="closeButton"> <a class="myButton" href="#" onClick="$(this).parent().parent().hide(300)">✖</a></span>').show(300);
