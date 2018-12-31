@@ -4,7 +4,7 @@ buzz.defaults.formats = [ 'ogg', 'mp3' ];
 buzz.defaults.preload = 'metadata';
 
 var questions = [
-     { sent: "[] and her friends believe that they will be friends forever.", color:'#666600', ques: "She Her Herself", word: "She", sound: '', helptext: '<iframe width=\"800\" height=\"500\" src=\"/revealslides/partsofspeech.html#/pronouns" frameborder=\"0\" allowfullscreen></iframe>' },
+     { sent: "[] and her friends believe that they will be friends forever.", color:'#666600', ques: "She Her Herself", word: "She", sound: '', helptext: '<iframe width=\"800\" height=\"500\" src=\"../revealslides/partsofspeech.html#/pronouns" frameborder=\"0\" allowfullscreen></iframe>' },
 	{ sent: "[] and I buy our milk from the same farmer.", color:'#666600', ques: "He Him Himself", word: "He", sound: '', helptext: '<iframe width=\"800\" height=\"500\" src=\"../revealslides/partsofspeech.html#/pronouns" frameborder=\"0\" allowfullscreen></iframe>' },
 	{ sent: "Hello? Yes, it is [].", color:'#666600', ques: "I me myself", word: "I", sound: '', helptext: '<iframe width=\"800\" height=\"500\" src=\"../revealslides/partsofspeech.html#/pronouns" frameborder=\"0\" allowfullscreen></iframe>' },
 	{ sent: "The supervisor ordered [] to reorganize the boxes.", color:'#666600', ques: "they them themselves", word : "them", sound: '', helptext: '<iframe width=\"800\" height=\"500\" src=\"../revealslides/partsofspeech.html#/pronouns" frameborder=\"0\" allowfullscreen></iframe>' },
