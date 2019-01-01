@@ -136,8 +136,7 @@ $( function() {
     });
 
     function refreshGame() {
-		gameSound.stop();
-        $( '#models' ).html( '' );
+		        $( '#models' ).html( '' );
         $( '#letters' ).html( '' );
 		document.getElementById("sent").style.textAlign = "left";
     }
@@ -158,8 +157,8 @@ $( function() {
         var game  = games[ idx ],
 		scoreK = 0;
 		
-        gameSound = new buzz.sound( game.sound );
-		gameSound.load().play();
+        //gameSound = new buzz.sound( game.sound );
+		//gameSound.load().play();
 
          var gmclr = "#"+((1<<24)*Math.random()|0).toString(16);
         // Fade the background color
@@ -220,13 +219,7 @@ $( function() {
 
             rotate( this, angle );
 
-            $( this ).mousedown( function() {
-				gameSound.stop();
-                var letter = $( this ).text();
-                if ( alphabetSounds[ letter ] ) {
-                    alphabetSounds[ letter ].play();
-                }
-            });
+           
         });
 
         $letters.find( 'li.draggable' ).draggable({
