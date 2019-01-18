@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+  font-family: 'Special Elite';
+  font-weight: 400;
+  font-style: normal;
+  src: url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm8OV-75E7mII8OPOWd5roDg.eot');
+  src: url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm8OV-75E7mII8OPOWd5roDg.eot?#iefix') format('embedded-opentype'),
+       local('Special Elite'),
+       local('Special-Elite-regular'),
+       url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35JmwYWpCd0FFfjqwFBDnEN0bM.woff2') format('woff2'),
+       url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff') format('woff'),
+       url('http://fonts.gstatic.com/s/specialelite/v6/9-wW4zu3WNoD5Fjka35JmybsRidxnYrfzLNRqJkHfFo.ttf') format('truetype'),
+       url('http://fonts.gstatic.com/l/font?kit=9-wW4zu3WNoD5Fjka35JmzyKAGS2js9R2mTcvyyc0eU&skey=8f705625ab986205&v=v6#SpecialElite') format('svg');
+}
+
+
+body, html {
+  margin: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 400ms;
+  -moz-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+body, .onepage-wrapper, html {
+  display: block;
+  position: static;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 0;
+  -webkit-transform-style: preserve-3d;
+}
+
+.onepage-wrapper .section {
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-pagination {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.onepage-pagination li {
+  padding: 0;
+  text-align: center;
+}
+.onepage-pagination li a{
+  padding: 10px;
+  width: 4px;
+  height: 4px;
+  display: block;
+  
+}
+.onepage-pagination li a:before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.onepage-pagination li a.active:before{
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: 1px solid black;
+  margin-top: -4px;
+  left: 8px;
+}
+
+.disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
+  overflow: auto;
+}
+
+.disabled-onepage-scroll .onepage-wrapper .section {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+}
+.disabled-onepage-scroll .onepage-wrapper {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  transform: none !important;
+  -ms-transform: none !important;
+  min-height: 100%;
+}
+
+
+.disabled-onepage-scroll .onepage-pagination {
+  display: none;
+}
+
+body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
+  position: inherit;
+}
+
+
